@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>SKU ID</th>
+      <th>Price</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.name, edit_product_path(product) %></td>
+        <td><%= product.sku_id%></td>
+        <td><%= product.price %></td>
+        <td><%= product.images.first.img_path %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
